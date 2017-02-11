@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Meeting Metrics</title>
+        <script src="https://code.jquery.com/jquery.js"></script>
+    </head>
+    <body>
+
+        {% for meeting in meetings.meeting_title %}
+            <button>{meeting}</button>
+        {% endfor %}
+
+        <button id="ratings-over-time">Ratings Over Time</button>
+
+    </body>
+
+</html>
