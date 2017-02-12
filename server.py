@@ -1,4 +1,4 @@
-"""Personal Site"""
+"""Meeting Metrics Application"""
 
 from jinja2 import StrictUndefined
 from flask import (Flask,
@@ -9,7 +9,11 @@ from flask import (Flask,
                    # session,
                    jsonify
                    )
+from model import (connect_to_db)
 from flask_debugtoolbar import DebugToolbarExtension
+
+from helper_functions import (query_meetings)
+
 
 app = Flask(__name__)
 
@@ -47,6 +51,16 @@ def ratings_json():
     return jsonify(rating_info)
 
 
+@app.route('/recurring-ratings.json')
+def recurring_ratings_json():
+    """Query DB for rating info."""
+
+    # some stuff about meeting ratings from DB
+    recur_rating_info = ""
+
+    return jsonify(recur_rating_info)
+
+
 @app.route('/topics.json')
 def topics_json():
     """Query DB for meeting info."""
@@ -55,15 +69,6 @@ def topics_json():
     topics_info = ""
 
     return jsonify(topics_info)
-
-
-@app.route('/radar.json')
-def radar_json():
-    """Radar graph info"""
-
-    radar_info = ""
-
-    return jsonify(radar_info)
 
 
 @app.route("/error")
@@ -75,6 +80,8 @@ def error():
 if __name__ == "__main__":
     # debug=True allows for use of DebugToolbarExtension downstream
     app.debug = True
+
+    connect_to_db(app)
 
     # Use the DebugToolbar
     DebugToolbarExtension(app)
