@@ -9,5 +9,18 @@ packaging==16.8
 pkg-resources==0.0.0
 pyparsing==2.1.10
 six==1.10.0
+<<<<<<< HEAD
 SQLAlchemy==1.1.5
 Werkzeug==0.11.15
+=======
+Flask==0.11
+Flask-DebugToolbar==0.10.0
+Flask-SQLAlchemy==2.0
+Jinja2==2.7.3
+MarkupSafe==0.23
+SQLAlchemy==1.0.3
+Werkzeug==0.10.4
+blinker==1.3
+itsdangerous==0.24
+wsgiref==0.1.2
+>>>>>>> c24b58d7b4d7069978ee05592867d7e26f6ffb19

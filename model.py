@@ -35,7 +35,6 @@ class Rating(db.Model):
     score = db.Column(db.Integer, nullable=False)
 
 
-
 def connect_to_db(app, db_URI='postgresql:///meeting-metrics'):
     """Connect the database to our Flask app."""
 
@@ -53,4 +52,3 @@ if __name__ == "__main__":
     from server import app
     connect_to_db(app)
     print "Connected to DB."
-
