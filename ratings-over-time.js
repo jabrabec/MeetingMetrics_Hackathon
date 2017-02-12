@@ -1,6 +1,6 @@
 "use-strict";
 
-$(document).ready(function () {
+function ratingsOverTime (results) {
 
     var ctx = $('#myChart');
 
@@ -8,7 +8,7 @@ $(document).ready(function () {
         labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
         datasets: [
             {
-                label: "Average Topic Rating Per Month",
+                label: "Average Recurring Meeting Rating Per Month",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
@@ -40,4 +40,4 @@ $(document).ready(function () {
                 showLines: true
             }
         });
-});
+};
