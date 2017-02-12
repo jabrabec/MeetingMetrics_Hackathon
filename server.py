@@ -12,7 +12,7 @@ from flask import (Flask,
 from model import (connect_to_db, Topic, Meeting, Rating)
 from flask_debugtoolbar import DebugToolbarExtension
 
-from helper_functions import (query_meetings)
+from helper_functions import (query_meetings, query_recurring_meetings)
 
 
 app = Flask(__name__)
@@ -47,7 +47,7 @@ def recurring_ratings_json():
     """Query DB for rating info."""
 
     # some stuff about meeting ratings from DB
-    recur_rating_info = ""
+    recur_rating_info = query_recurring_meetings()
 
     return jsonify(recur_rating_info)
 
