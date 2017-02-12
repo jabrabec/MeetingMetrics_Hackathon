@@ -62,8 +62,9 @@ def topics_json():
     for meeting in meetings:
         dicto[meeting.topic.topic_title] = dicto.get(meeting.topic.topic_title, 0) + (meeting.length * meeting.attendees)
 
+    topics = dicto.keys()
     meetings = {
-       "labels": TOPICS,
+       "labels": topics,
        "datasets": [
            {
                "label": "Time Spent on Topics",
