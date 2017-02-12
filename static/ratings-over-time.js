@@ -1,17 +1,27 @@
 "use-strict";
 
+
 function ratingsOverTime (results) {
 
-    var ctx = $('#ratings-over-time');
+    var ctx = $('canvas#ratings-over-time');
 
-    var resultsLabels; // placeholder for array from results
-    var resultsData; // placeholder for array from results
+    var results = results;
+
+    var resultsTitle = results['title'];
+    var resultsLabels = [];
+    var resultsData = [];
+
+    for (i = 0; i < results['ave_rating'].length; i++) {
+        var date = results['ave_rating'][i]
+        resultsLabels.push(date);
+        resultsData.push(results['ave_rating'][date]);
+    }
 
     var data = {
-        labels: resultLabels,
+        labels: resultsLabels,
         datasets: [
             {
-                label: "Average Rating Per Month",
+                label: 'Ratings Trend for ' + resultsTitle,
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
@@ -29,7 +39,7 @@ function ratingsOverTime (results) {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                data: resultData,
+                data: resultsData,
                 spanGaps: false,
             }
         ]
@@ -39,7 +49,8 @@ function ratingsOverTime (results) {
             type: 'line',
             data: data,
             options: {
-                showLines: true
+                showLines: true,
+                responsive: false
             }
         });
 };
