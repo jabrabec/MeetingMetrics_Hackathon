@@ -2,10 +2,10 @@
 
 function ratingsOverTime (results) {
 
-    var ctx = $('#myChart');
+    var ctx = $('#ratings-over-time');
 
-    var resultsLabels; // array from results
-    var resultsData; // array from results
+    var resultsLabels; // placeholder for array from results
+    var resultsData; // placeholder for array from results
 
     var data = {
         labels: resultLabels,
@@ -29,7 +29,6 @@ function ratingsOverTime (results) {
                 pointHoverBorderWidth: 2,
                 pointRadius: 1,
                 pointHitRadius: 10,
-                // sample data
                 data: resultData,
                 spanGaps: false,
             }
