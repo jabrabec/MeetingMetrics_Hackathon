@@ -174,6 +174,9 @@ COPY meetings (meeting_id, meeting_title, meeting_time, attendees, length, topic
 8	New Initiatives	2017-01-14 11:30:00	100	120	5	\N
 9	2017 Goals and Strategies	2017-09-24 09:00:00	91	90	5	\N
 10	AWS Updates	2017-09-23 13:30:00	34	88	2	\N
+12	Weekly group meeting	2017-01-31 10:00:00	5	60	1	1
+13	Weekly group meeting	2017-02-06 10:00:00	5	60	3	1
+14	Weekly group meeting	2017-01-26 10:00:00	5	60	1	1
 \.
 
 
@@ -181,7 +184,7 @@ COPY meetings (meeting_id, meeting_title, meeting_time, attendees, length, topic
 -- Name: meetings_meeting_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vagrant
 --
 
-SELECT pg_catalog.setval('meetings_meeting_id_seq', 10, true);
+SELECT pg_catalog.setval('meetings_meeting_id_seq', 14, true);
 
 
 --
@@ -199,6 +202,9 @@ COPY ratings (rating_id, meeting_id, score) FROM stdin;
 8	8	4.5
 9	9	5
 10	10	5
+11	12	3
+12	13	4
+13	14	2.5
 \.
 
 
@@ -206,7 +212,7 @@ COPY ratings (rating_id, meeting_id, score) FROM stdin;
 -- Name: ratings_rating_id_seq; Type: SEQUENCE SET; Schema: public; Owner: vagrant
 --
 
-SELECT pg_catalog.setval('ratings_rating_id_seq', 10, true);
+SELECT pg_catalog.setval('ratings_rating_id_seq', 13, true);
 
 
 --
