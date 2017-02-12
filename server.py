@@ -1,4 +1,4 @@
-"""Personal Site"""
+"""Meeting Metrics Application"""
 
 from jinja2 import StrictUndefined
 from flask import (Flask,
@@ -9,7 +9,11 @@ from flask import (Flask,
                    # session,
                    jsonify
                    )
+from model import (connect_to_db)
 from flask_debugtoolbar import DebugToolbarExtension
+
+from helper_functions import (query_meetings)
+
 
 app = Flask(__name__)
 
@@ -75,6 +79,8 @@ def error():
 if __name__ == "__main__":
     # debug=True allows for use of DebugToolbarExtension downstream
     app.debug = True
+
+    connect_to_db(app)
 
     # Use the DebugToolbar
     DebugToolbarExtension(app)
