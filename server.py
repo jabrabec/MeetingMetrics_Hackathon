@@ -31,17 +31,17 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/meetings.json')
+@app.route('/meetings.json', methods=['GET'])
 def meetings_json():
     """Query DB for meeting info."""
 
     # some stuff about meetings from DB
-    meeting_info = ""
+    meeting_info = query_meetings()
 
     return jsonify(meeting_info)
 
 
-@app.route('/ratings.json')
+@app.route('/ratings.json', methods=['GET'])
 def ratings_json():
     """Query DB for rating info."""
 
@@ -51,7 +51,7 @@ def ratings_json():
     return jsonify(rating_info)
 
 
-@app.route('/recurring-ratings.json')
+@app.route('/recurring-ratings.json', methods=['GET'])
 def recurring_ratings_json():
     """Query DB for rating info."""
 
@@ -61,7 +61,7 @@ def recurring_ratings_json():
     return jsonify(recur_rating_info)
 
 
-@app.route('/topics.json')
+@app.route('/topics.json', methods=['GET'])
 def topics_json():
     """Query DB for meeting info."""
 
