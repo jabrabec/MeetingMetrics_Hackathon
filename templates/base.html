@@ -5,17 +5,20 @@
         <script src="https://code.jquery.com/jquery.js"></script>
     </head>
     <body>
+        <select name="meetings" id="meeting-drop">
+            <option value="meetings">Meetings
+            <!-- {% for user_address in user.user_addresses %} -->
+                <option data-id="{{ meeting.meeting_id }}" >{{ meeting }}
+            <!-- {% endfor %} -->
+        </select>
 
-        <!-- {% for meeting in meetings.meeting_title %} -->
-            <button id="meeting">{ meeting } : { meeting.meeting_id.rating }</button>
-            <!-- {% if meeting.recurring is True %} -->
-                <button class="ratings-buttons" id="ratings-over-time">Ratings Over Time</button>
-            <!-- {% endif %} -->
-        <!-- {% endfor %} -->
-        
+
+        <!-- {% if meeting.recurring is not None %} -->
+            <button class="ratings-buttons" id="ratings-over-time">Ratings Over Time</button>
+        <!-- {% endif %} -->
         <button class="ratings-buttons" id="ratings-spread">Ratings Spread</button>
         <button class="ratings-buttons" id="topic-ratings">Topic Ratings</button>
-
+        <input type="hidden" id="meeting-selection" name="meeting-selection">
 
 
         <script src="file:///Users/nnegri/src/MeetingMetrics_Hackathon/static/meeting_ratings.js"></script>

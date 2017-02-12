@@ -3,4 +3,24 @@
 
 $(".ratings-buttons").hide();
 
-$("#meeting").on("click", function () {$(".ratings-buttons").show();})
+$("#meeting-drop").on("change", function () {
+    $(".ratings-buttons").show();
+    var meeting = $(this).find('option:selected').data('id');
+
+    $("#ratings-over-time").on("click", ratingsOverTime;
+
+
+    function ratingsOverTime(evt) {
+        evt.preventDefault();
+        $.post('/', meeting, showRatingsTimeChart);
+
+    }
+
+
+    function showRatingsTimeChart(results) {
+
+    }
+
+})
+
+
