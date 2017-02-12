@@ -9,8 +9,7 @@
         <select name="meetings" id="meeting-drop">
             <option value="meetings">Meetings
             {% for meeting in meetings %}
-                <option data-id="{{ meeting.meeting_id }}" >{{ meeting.meeting_title }}{{ meeting.meeting_time }}
-                <option data-recurring="{{ meeting.recurring_id }}">
+                <option data-id="{{ meeting.meeting_id }}" data-recurring="{{ meeting.recurring_id }}">{{ meeting.meeting_title }}{{ meeting.meeting_time }}
             {% endfor %}
         </select>
 
@@ -27,8 +26,8 @@
             Put your body here.
         {% endblock %}
 
-        <script src="/static/topics.js" type="text/javascript"></script>
-        <script src="../static/meeting_ratings.js"></script>
+        <script src="../static/topics.js" type="text/javascript"></script>
+        <script src="../static/meeting_ratings.js" type="text/javascript"></script>
     </body>
 
 </html>
