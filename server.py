@@ -51,6 +51,16 @@ def ratings_json():
     return jsonify(rating_info)
 
 
+@app.route('/recurring-ratings.json')
+def recurring_ratings_json():
+    """Query DB for rating info."""
+
+    # some stuff about meeting ratings from DB
+    recur_rating_info = ""
+
+    return jsonify(recur_rating_info)
+
+
 @app.route('/topics.json')
 def topics_json():
     """Query DB for meeting info."""
@@ -59,15 +69,6 @@ def topics_json():
     topics_info = ""
 
     return jsonify(topics_info)
-
-
-@app.route('/radar.json')
-def radar_json():
-    """Radar graph info"""
-
-    radar_info = ""
-
-    return jsonify(radar_info)
 
 
 @app.route("/error")
