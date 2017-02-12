@@ -1,6 +1,6 @@
 'use strict;'
 
 
-$("#ratings-over-time").hide();
+$(".ratings-buttons").hide();
 
-$("#meeting").on("click", function () {$("#ratings-over-time").show();})
+$("#meeting").on("click", function () {$(".ratings-buttons").show();})
