@@ -1,16 +1,21 @@
-# Believe
+# Meeting Metrics - DeveloperWeek Hackathon
 
-Inspired by the National UFO Reporting Center Online Database, Believe was created to help people visualize where the most frequent UFO sightings are.  UFO reports and population data from the U.S. Census Bureau were used to create heat map layers for interesting data comparison.  Both heatmap layers may be toggled on and off, and there are buttons to toggle gradient color, radius, and opacity for each layer.  Users may also view charts representing the number of UFO reports per capita for each state, and the number of UFO reports for each day of the week.
+Inspired by the Scrum Alliance challenge, MeetingMetrics was created to help companies visualize meeting data, in an effort to increase productivity.  Users may view visualizations of the amount of employee hours spent on different meeting topics, 
 
 ##Contents
 * [Tech Stack](#technologies)
 * [Features](#features)
+* [Challenge Description](#challenge)
 * [Installation](#install)
-* [About Me](#aboutme)
+* [About the Team](#aboutteam)
 
 ## <a name="technologies"></a>Technologies
-Tech Stack: PostgreSQL, SQLAlchemy, Python, Flask, JavaScript, HTML, CSS, JQuery, Beautiful Soup, Chart.js, Bootstrap.<br/>
-APIs: Google Maps with visualization library, Geocoder<br/>
+Tech Stack: Python/Flask, PostgreSQL/SQLAlchemy, JavaScript/JQuery/Chart.js, HTML/CSS<br/>
+
+
+## <a name="challenge"></a>Challenge Description
+How often do you attend a "productive" meeting? In fact, does your organization have a shared understanding of a "productive" meeting? We challenge you to develop a "Productive Meeting Visualization" tool - a way for users to input data points as agreed upon withing their organization, perhaps from a calendar invite, that would allow teams to calculate and visualize how productive or useful their meetings have been. They could (but don't have to) use D3 JS for visualizing the data and this could also work well with meeting minutes, so it's more incorporated into a meeting and doesn't feel "tacked on" or like an extra task to handle afterwards.
+
 
 ## <a name="features"></a>Features
 
@@ -38,17 +43,17 @@ Chart.js was used to visualize the data in different ways:
 
 ## <a name="install"></a>Installation
 
-To run Believe:
+To run MeetingMetrics:
 
 Install PostgreSQL (Mac OSX)
 
 Clone or fork this repo:
 
 ```
-https://github.com/CharleyMcLean/Believe.git
+https://github.com/jabrabec/MeetingMetrics_Hackathon.git
 ```
 
-Create and activate a virtual environment inside your Believe directory:
+Create and activate a virtual environment inside your MeetingMetrics directory:
 
 ```
 virtualenv env
@@ -67,7 +72,7 @@ Set up the database:
 python -i model.py
 db.create_all()
 quit()
-psql ufo_reports < dump.sql
+psql meetingmetrics < dump.sql
 ```
 
 Run the app:
@@ -76,7 +81,12 @@ Run the app:
 python server.py
 ```
 
-You can now navigate to 'localhost:5000/' to access Believe.
+You can now navigate to 'localhost:5000/' to access MeetingMetrics.
 
-## <a name="aboutme"></a>About Me
-The developer lives in the San Francisco Bay Area. This is her first software project.
+## <a name="aboutteam"></a>About the Team
+The following software engineers contributed to the MeetingMetrics hackathon project:
+* [Charley McLean](https://www.linkedin.com/in/charley-mclean)
+* [Jennifer Brabec](https://www.linkedin.com/in/jenniferbrabec)
+* [Katherine Liang](https://www.linkedin.com/in/katliang)
+* [Nicole Negri](https://www.linkedin.com/in/nicole-negri)
+* [Yusra Ahmed](https://www.linkedin.com/in/yusraa)
