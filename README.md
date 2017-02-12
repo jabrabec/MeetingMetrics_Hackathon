@@ -36,7 +36,7 @@ Users may view the amount of employee hours spent on different meeting topics:
 
 To run MeetingMetrics:
 
-Install PostgreSQL (Mac OSX)
+Install PostgreSQL ([Mac OSX](https://launchschool.com/blog/how-to-install-postgresql-on-a-mac)) ([Linux/Windows](http://www.w3resource.com/PostgreSQL/install-postgresql-on-linux-and-windows.php))
 
 Clone or fork this repo:
 
