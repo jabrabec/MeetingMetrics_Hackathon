@@ -1,35 +1,44 @@
 'use strict;'
 
-
-$(".ratings-buttons").hide();
+$("#ratings-spread").hide();
+$("#ratings-over-time").hide();
 
 $("#meeting-drop").on("change", function () {
 
-    $(".ratings-buttons").show();
+    $("#ratings-spread").show();
+
     var recurring = $(this).find('option:selected').data('recurring');
-    if recurring != None {
+    if (recurring != null) {
         $("#ratings-over-time").show();
     }
 
     var meeting = $(this).find('option:selected').data('id');
-    $("#ratings-over-time").on("click", ratingsOverTime);
+    $("#ratings-over-time").on("click", ratingsOverTimeCall);
     $("#ratings-spread").on("click", ratingsSpread);
 
-    function ratingsOverTime(evt) {
+    function ratingsOverTimeCall(evt) {
         evt.preventDefault();
-        $.post('/', meeting, showRatingsTimeChart);
+        $("#ratings-over-time-chart").show();
+        $("#rating-spread-chart").hide();
+        $("#topics-chart").hide();
+
+        $.post('/recurring_ratings.json', meeting, ratingsOverTime);
 
     }
 
 
-    function showRatingsTimeChart(results) {
-        // from backend, return ratings for recurring meetings over time
-    }
+    // function showRatingsTimeChart(results) {
+    //     // from backend, return ratings for recurring meetings over time
+    // }
 
 
     function ratingsSpread(evt) {
         evt.preventDefault();
-        $.post('/', meeting, showRatingsSpreadChart);
+        $("#rating-spread-chart").show();
+        $("#topics-chart").hide();
+        $("#ratings-over-time-chart").hide();
+
+        $.post('/ratings.json', meeting, showRatingsSpreadChart);
 
     }
 
@@ -40,17 +49,21 @@ $("#meeting-drop").on("change", function () {
 
 })
 
-$("#topic-ratings").on("click", topicRatings);
+$("#topic-ratings").on("click", topicTime);
 
-function topicRatings(evt) {
+function topicTime(evt) {
     evt.preventDefault();
-    $.get('/', showTopicRatings);
+    $("#topics-chart").show();
+    $("#rating-spread-chart").hide();
+    $("#ratings-over-time-chart").hide();
+
+    $.get('/topics.json', showTopicTime);
 
 }
 
-function showTopicRatings(results) {
-    // from backend, return time spent on each topic (and ratings for each topic)
-}
+// function showTopicTime(results) {
+//     // from backend, return time spent on each topic (and ratings for each topic)
+// }
 
 
 
