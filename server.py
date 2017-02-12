@@ -57,14 +57,18 @@ def topics_json():
     """Query DB for meeting info."""
 
     meetings = Meeting.query.all()
-
     dicto = {}
+    labels = []
+    data = []
     for meeting in meetings:
-        dicto[meeting.topic.topic_title] = dicto.get(meeting.topic.topic_title, 0) + (meeting.length * meeting.attendees)
+      dicto[meeting.topic.topic_title] = dicto.get(meeting.topic.topic_title, 0) + (meeting.length * meeting.attendees)
+    
+    for key in dicto.keys():
+      labels.append(key)
+      data.append(dicto[key])
 
-    topics = dicto.keys()
     meetings = {
-       "labels": topics,
+       "labels": labels,
        "datasets": [
            {
                "label": "Time Spent on Topics",
@@ -74,10 +78,12 @@ def topics_json():
                "pointBorderColor": "#fff",
                "pointHoverBackgroundColor": "#fff",
                "pointHoverBorderColor": "rgba(179,181,198,1)",
-               "data": dicto
+               "data": data
            }
        ]
     }
+
+
     jsonified = jsonify(meetings)
     print jsonified
     return jsonified

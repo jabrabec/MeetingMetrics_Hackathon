@@ -1,7 +1,8 @@
 function showTopicTime (data) {
+    console.log(data);
     var ctxRadar = $("#radar-chart");
     var optionsRadar = {
-        responsive: true,
+        responsive: false,
         }; //end of var optionsDonut
 
      // make a chart
