@@ -1,4 +1,4 @@
-showTopicTime function (data) {
+function showTopicTime (data) {
     var ctxRadar = $("#radar-chart");
     var optionsRadar = {
         responsive: true,
@@ -11,4 +11,4 @@ showTopicTime function (data) {
         options: optionsRadar,
     }); //end of var radarChart
     
-}; //end of showTopicTime function
+} //end of showTopicTime function
