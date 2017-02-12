@@ -4,11 +4,14 @@ function ratingsOverTime (results) {
 
     var ctx = $('#myChart');
 
+    var resultsLabels; // array from results
+    var resultsData; // array from results
+
     var data = {
-        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        labels: resultLabels,
         datasets: [
             {
-                label: "Average Recurring Meeting Rating Per Month",
+                label: "Average Rating Per Month",
                 fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
@@ -27,7 +30,7 @@ function ratingsOverTime (results) {
                 pointRadius: 1,
                 pointHitRadius: 10,
                 // sample data
-                data: [3, 3.5, 3, 4, 4, 3, 4, 3, 3, 5, 4, 4],
+                data: resultData,
                 spanGaps: false,
             }
         ]
