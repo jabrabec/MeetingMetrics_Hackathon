@@ -8,10 +8,12 @@ class Meeting(db.Model):
     __tablename__ = "meetings"
 
     meeting_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    meeting_title = db.Column(db.String(100), nullable=False)
     meeting_time = db.Column(db.DateTime, default=datetime.datetime.utcnow, nullable=False)
     attendees = db.Column(db.Integer, nullable=False)
     length = db.Column(db.Integer, nullable=False)
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.topic_id'))
+    recurring_id = db.Column(db.Integer, nullable=True, default=None)
 
     topic = db.relationship("Topic", backref=db.backref("meetings"))
     rating = db.relationship("Rating", backref=db.backref("meetings"))
@@ -23,7 +25,7 @@ class Topic(db.Model):
 
     topic_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     topic_title = db.Column(db.String(500), nullable=False)
-    meeting_id = db.Column(db.Integer, db.ForeignKey('meetings.meeting_id'))
+
 
 
 class Rating(db.Model):
