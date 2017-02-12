@@ -6,8 +6,8 @@ Inspired by the [Scrum Alliance](https://www.scrumalliance.org/) challenge, Meet
 
 ##Contents
 * [Tech Stack](#technologies)
-* [Features](#features)
 * [Challenge Description](#challenge)
+* [Features](#features)
 * [Installation](#install)
 * [About the Team](#aboutteam)
 
