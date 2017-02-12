@@ -4,8 +4,8 @@ meeting_id,meeting_title,meeting_time,attendees,length,topic_id
 3,Test Driven Development,2017-08-01 13:30:00,28,30,4
 4,New Hires,2017-08-24 14:00:00,75,60,5
 5,Predictive Analysis,2017-10-27 14:00:00,51,30,3
-6,Financial Reporting,2017-09-28 09:30:00,74,120,5
-7,NoSQL,2017-05-28 10:30:00,24,68,4
-8,2017-01-14 11:30:00,12,56,9
-9,2017-09-24 09:00:00,91,107,5
-10,2017-09-23 13:30:00,34,88,1
+6,Financial Reporting,2017-09-28 09:30:00,74,90,5
+7,NoSQL,2017-05-28 10:30:00,24,60,4
+8,New Initiatives,2017-01-14 11:30:00,100,120,5
+9,2017 Goals and Strategies,2017-09-24 09:00:00,91,90,5
+10,AWS Updates,2017-09-23 13:30:00,34,88,2
