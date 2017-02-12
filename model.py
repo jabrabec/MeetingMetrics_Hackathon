@@ -3,6 +3,15 @@ import datetime
 
 db = SQLAlchemy()
 
+
+class Topic(db.Model):
+
+    __tablename__ = "topics"
+
+    topic_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    topic_title = db.Column(db.String(500), nullable=False)
+
+
 class Meeting(db.Model):
 
     __tablename__ = "meetings"
@@ -15,17 +24,8 @@ class Meeting(db.Model):
     topic_id = db.Column(db.Integer, db.ForeignKey('topics.topic_id'))
     recurring_id = db.Column(db.Integer, nullable=True, default=None)
 
-    topic = db.relationship("Topic", backref=db.backref("meetings"))
-    rating = db.relationship("Rating", backref=db.backref("meetings"))
-
-
-class Topic(db.Model):
-
-    __tablename__ = "topics"
-
-    topic_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    topic_title = db.Column(db.String(500), nullable=False)
-
+    topic = db.relationship("Topic", backref="meetings")
+    rating = db.relationship("Rating", backref="meetings")
 
 
 class Rating(db.Model):
@@ -34,7 +34,7 @@ class Rating(db.Model):
 
     rating_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     meeting_id = db.Column(db.Integer, db.ForeignKey('meetings.meeting_id'))
-    score = db.Column(db.Integer, nullable=False)
+    score = db.Column(db.Float, nullable=False)
 
 
 def connect_to_db(app, db_URI='postgresql:///meeting-metrics'):
