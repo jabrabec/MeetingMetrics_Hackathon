@@ -60,10 +60,8 @@ pip install -r requirements.txt
 Set up the database:
 
 ```
-python -i model.py
-db.create_all()
-quit()
-psql meetingmetrics < dump.sql
+createdb meeting-metrics
+psql meeting-metrics < seed_data/meeting-metrics.sql
 ```
 
 Run the app:

@@ -9,7 +9,7 @@ from flask import (Flask,
                    # session,
                    jsonify
                    )
-from model import (connect_to_db)
+from model import (connect_to_db, Topic, Meeting, Rating)
 from flask_debugtoolbar import DebugToolbarExtension
 
 from helper_functions import (query_meetings)
@@ -56,10 +56,30 @@ def recurring_ratings_json():
 def topics_json():
     """Query DB for meeting info."""
 
-    # some stuff about meetings from DB
-    topics_info = ""
+    meetings = Meeting.query.all()
 
-    return jsonify(topics_info)
+    dicto = {}
+    for meeting in meetings:
+        dicto[meeting.topic.topic_title] = dicto.get(meeting.topic.topic_title, 0) + (meeting.length * meeting.attendees)
+
+    meetings = {
+       "labels": TOPICS,
+       "datasets": [
+           {
+               "label": "Time Spent on Topics",
+               "backgroundColor": "rgba(179,181,198,0.2)",
+               "borderColor": "rgba(179,181,198,1)",
+               "pointBackgroundColor": "rgba(179,181,198,1)",
+               "pointBorderColor": "#fff",
+               "pointHoverBackgroundColor": "#fff",
+               "pointHoverBorderColor": "rgba(179,181,198,1)",
+               "data": dicto
+           }
+       ]
+    }
+    jsonified = jsonify(meetings)
+    print jsonified
+    return jsonified
 
 
 @app.route("/error")
