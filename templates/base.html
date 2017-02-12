@@ -9,17 +9,19 @@
             <option value="meetings">Meetings
             <!-- {% for user_address in user.user_addresses %} -->
                 <option data-id="{{ meeting.meeting_id }}" >{{ meeting }}
+                <option data-recurring="{{ meeting.recurring_id }}">
             <!-- {% endfor %} -->
         </select>
 
-
-        <!-- {% if meeting.recurring is not None %} -->
-            <button class="ratings-buttons" id="ratings-over-time">Ratings Over Time</button>
-        <!-- {% endif %} -->
+        <button id="ratings-over-time">Ratings Over Time</button>
         <button class="ratings-buttons" id="ratings-spread">Ratings Spread</button>
         <button class="ratings-buttons" id="topic-ratings">Topic Ratings</button>
         <input type="hidden" id="meeting-selection" name="meeting-selection">
 
+
+        {% block content %}
+            Put your body here.
+        {% endblock %}
 
         <script src="file:///Users/nnegri/src/MeetingMetrics_Hackathon/static/meeting_ratings.js"></script>
     </body>
