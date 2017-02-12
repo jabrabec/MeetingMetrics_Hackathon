@@ -1,5 +1,7 @@
 # Meeting Metrics - DeveloperWeek Hackathon
 
+![](https://github.com/jabrabec/MeetingMetrics_Hackathon/blob/master/static/logo.jpg?raw=true)
+
 Inspired by the Scrum Alliance challenge, MeetingMetrics was created to help companies visualize meeting data, in an effort to increase productivity.  Users may view visualizations of the average rating per meeting for a specific recurring meeting, the frequency of ratings for one specific meeting, and the amount of employee hours spent on different meeting topics.
 
 ##Contents
@@ -18,8 +20,6 @@ How often do you attend a "productive" meeting? In fact, does your organization 
 
 
 ## <a name="features"></a>Features
-
-![](https://github.com/jabrabec/MeetingMetrics_Hackathon/blob/master/static/logo.jpg?raw=true)
 
 Users may choose a specific recurring meeting and view visualizations of the average ratings for that meeting:
 ![]()
