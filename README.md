@@ -12,7 +12,7 @@ Inspired by the [Scrum Alliance](https://www.scrumalliance.org/) challenge, Meet
 * [About the Team](#aboutteam)
 
 ## <a name="technologies"></a>Technologies
-Tech Stack: Python/Flask, PostgreSQL/SQLAlchemy, JavaScript/JQuery/Chart.js, HTML/CSS<br/>
+Tech Stack: Python/Flask, PostgreSQL/SQLAlchemy, JavaScript/JQuery/Chart.js, HTML/CSS/Bootstrap<br/>
 
 
 ## <a name="challenge"></a>Challenge Description
