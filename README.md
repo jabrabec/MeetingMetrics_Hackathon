@@ -1,6 +1,6 @@
 # Meeting Metrics - DeveloperWeek Hackathon
 
-Inspired by the Scrum Alliance challenge, MeetingMetrics was created to help companies visualize meeting data, in an effort to increase productivity.  Users may view visualizations of the amount of employee hours spent on different meeting topics, 
+Inspired by the Scrum Alliance challenge, MeetingMetrics was created to help companies visualize meeting data, in an effort to increase productivity.  Users may view visualizations of the average rating per meeting for a specific recurring meeting, the frequency of ratings for one specific meeting, and the amount of employee hours spent on different meeting topics.
 
 ##Contents
 * [Tech Stack](#technologies)
@@ -19,26 +19,17 @@ How often do you attend a "productive" meeting? In fact, does your organization 
 
 ## <a name="features"></a>Features
 
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-landing-page.png?raw=true)
+![](https://github.com/jabrabec/MeetingMetrics_Hackathon/blob/master/static/logo.jpg?raw=true)
 
-Users may view the map with the heatmap layers for both UFO reports and population data:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-map-ufo-pop.png?raw=true)
+Users may choose a specific recurring meeting and view visualizations of the average ratings for that meeting:
+![]()
+![]()
 
-Users may toggle the indiviaul heatmap layers on and off:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-map-no-pop.png?raw=true)
+Users may view visualizations of the frequency of ratings for one specific meeting:
+![]()
 
-Users may toggle to change the gradient color:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-ufo-gradient.png?raw=true)
-
-Users may also toggle to change the radius and the opacity:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-ufo-radius-opacity.png?raw=true)
-
-Users may customize their view by choosing which buttons to toggle:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-map-buttons-pressed.png?raw=true)
-
-Chart.js was used to visualize the data in different ways:
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-donut-chart.png?raw=true)
-![](https://github.com/CharleyMcLean/Believe/blob/master/static/img/screenshot-bar-chart.png?raw=true)
+Users may view the amount of employee hours spent on different meeting topics:
+![]()
 
 
 ## <a name="install"></a>Installation
