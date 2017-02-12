@@ -42,15 +42,15 @@ $("#meeting-drop").on("change", function () {
 
 $("#topic-ratings").on("click", topicRatings);
 
-    function topicRatings(evt) {
-        evt.preventDefault();
-        $.get('/', showTopicRatings);
+function topicRatings(evt) {
+    evt.preventDefault();
+    $.get('/', showTopicRatings);
 
-    }
+}
 
-    function showTopicRatings(results) {
-        // from backend, return time spent on each topic (and ratings for each topic)
-    }
+function showTopicRatings(results) {
+    // from backend, return time spent on each topic (and ratings for each topic)
+}
 
 
 
