@@ -29,7 +29,7 @@ Users may view visualizations of the frequency of ratings for one specific meeti
 ![]()
 
 Users may view the amount of employee hours spent on different meeting topics:
-![]()
+![](https://github.com/jabrabec/MeetingMetrics_Hackathon/blob/master/static/screenshot_radar.png?raw=true)
 
 
 ## <a name="install"></a>Installation
