@@ -29,7 +29,7 @@ def index():
     """Show main page."""
     meetings = query_meetings()
 
-    return render_template('base.html', meetings)
+    return render_template('base.html', meetings=meetings)
 
 
 @app.route('/ratings.json', methods=['GET'])
