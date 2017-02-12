@@ -32,7 +32,7 @@ def meetings_json():
     """Query DB for meeting info."""
 
     # some stuff about meetings from DB
-    meeting_info = None
+    meeting_info = ""
 
     return jsonify(meeting_info)
 
@@ -42,7 +42,7 @@ def ratings_json():
     """Query DB for rating info."""
 
     # some stuff about meeting ratings from DB
-    rating_info = None
+    rating_info = ""
 
     return jsonify(rating_info)
 
@@ -52,9 +52,18 @@ def topics_json():
     """Query DB for meeting info."""
 
     # some stuff about meetings from DB
-    topics_info = None
+    topics_info = ""
 
     return jsonify(topics_info)
+
+
+@app.route('/radar.json')
+def radar_json():
+    """Radar graph info"""
+
+    radar_info = ""
+
+    return jsonify(radar_info)
 
 
 @app.route("/error")
