@@ -27,18 +27,9 @@ app.jinja_env.undefined = StrictUndefined
 @app.route('/')
 def index():
     """Show main page."""
+    meetings = query_meetings()
 
-    return render_template('index.html')
-
-
-@app.route('/meetings.json', methods=['GET'])
-def meetings_json():
-    """Query DB for meeting info."""
-
-    # some stuff about meetings from DB
-    meeting_info = query_meetings()
-
-    return jsonify(meeting_info)
+    return render_template('base.html', meetings)
 
 
 @app.route('/ratings.json', methods=['GET'])
