@@ -2,26 +2,52 @@
 <html>
     <head>
         <title>Meeting Metrics</title>
+        <link rel="stylesheet" 
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
+        <style type="text/css">
+        .center-block {
+        width:250px;
+        padding:10px;
+        }
+        </style>
     </head>
     <body>
-        <select name="meetings" id="meeting-drop">
-            <option value="meetings">Meetings
-            {% for meeting in meetings %}
-                <option data-id="{{ meeting.meeting_id }}" data-recurring="{{ meeting.recurring_id }}">{{ meeting.meeting_title }}{{ meeting.meeting_time }}
-            {% endfor %}
-        </select>
-
-        <button id="ratings-over-time">Ratings Over Time</button>
-        <button class="ratings-buttons" id="ratings-spread">Ratings Spread</button>
-        <button class="ratings-buttons" id="topic-ratings">Topic Ratings</button>
-        <input type="hidden" id="meeting-selection" name="meeting-selection">
-
-        <div id="rating-spread-chart"><canvas id="rating-spread" width="100" height="100"></canvas></div>
-        <div id="topics-chart"><canvas id='radar-chart' width="100" height="100"></canvas></div>
-        <div id="ratings-over-time-chart"><canvas id="ratings-over-time" width="100" height="100"></canvas></div>
-
+        <div class="row">
+            <div class="center-block">
+                <img src="../static/logo.jpg">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <button class="ratings-buttons" id="topic-ratings">Topic Ratings</button>
+            </div>
+            <div class="col-sm-5 col-sm-offset-6">
+                <select name="meetings" id="meeting-drop">
+                    <option value="meetings">Meetings
+                    {% for meeting in meetings %}
+                        <option data-id="{{ meeting.meeting_id }}" data-recurring="{{ meeting.recurring_id }}">{{ meeting.meeting_title }}{{ meeting.meeting_time }}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <button id="ratings-over-time">Ratings Over Time</button>
+                <button class="ratings-buttons" id="ratings-spread">Ratings Spread</button>
+                <input type="hidden" id="meeting-selection" name="meeting-selection">
+            </div>
+        </div>
+         
+        <div class="row">
+            <div class="center-block">
+                <div id="rating-spread-chart"><canvas id="rating-spread" width="100" height="100"></canvas></div>
+                <div id="topics-chart"><canvas id='radar-chart' width="100" height="100"></canvas></div>
+                <div id="ratings-over-time-chart"><canvas id="ratings-over-time" width="100" height="100"></canvas></div>
+            </div>
+        </div>
         {% block content %}
             Put your body here.
         {% endblock %}
