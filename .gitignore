@@ -1,4 +1,8 @@
 env/
 *.pyc
 *secret*.sh
+<<<<<<< HEAD
 node_modules/
+=======
+.DS_Store
+>>>>>>> 47b64fbb8bc1a804c24aa7a04c67fe25fed94c66
